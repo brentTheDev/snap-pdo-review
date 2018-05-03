@@ -1,16 +1,27 @@
 <?php
-	namespace Edu\Cnm\bkie3\
+	namespace Edu\Cnm\snap-
 
 	require_once("autoload.php");
-	require_once(dirname(__DIR__)) . "/class/Autoload.php";
+	require_once(dirname(__DIR__, 2) . "/vendor/autoload.php");
 
 	use Ramsey\Uuid\Uuid;
 
 	class Senator implements \JsonSerializable {
 		use ValidateUuid;
-
+		/**
+		 * id for the Senator; this is the primary key
+		 * @var string|Uuid $senatorId
+		 */
 		private $senatorId;
+		/**
+		 * name of the senator
+		 * @var string $senatorName
+		 */
 		private $senatorName;
+		/**
+		 * number of lives of the senator
+		 * @var tinyint $senatorNumLives
+		 */
 		private $senatorNumLives;
 
 		/**
